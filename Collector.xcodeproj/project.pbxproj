@@ -12,6 +12,8 @@
 		334F463F1F4B91CC00A6CD9B /* Collector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 334F463D1F4B91CC00A6CD9B /* Collector.xcdatamodeld */; };
 		334F46411F4B91CC00A6CD9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 334F46401F4B91CC00A6CD9B /* Assets.xcassets */; };
 		334F46441F4B91CC00A6CD9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 334F46421F4B91CC00A6CD9B /* LaunchScreen.storyboard */; };
+		334F464C1F4CEED300A6CD9B /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334F464B1F4CEED300A6CD9B /* AddItemViewController.swift */; };
+		334F464E1F4CF8D000A6CD9B /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334F464D1F4CF8D000A6CD9B /* ItemsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		334F46401F4B91CC00A6CD9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		334F46431F4B91CC00A6CD9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		334F46451F4B91CC00A6CD9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		334F464B1F4CEED300A6CD9B /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		334F464D1F4CF8D000A6CD9B /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 		334F46351F4B91CC00A6CD9B /* Collector */ = {
 			isa = PBXGroup;
 			children = (
+				334F464B1F4CEED300A6CD9B /* AddItemViewController.swift */,
+				334F464D1F4CF8D000A6CD9B /* ItemsTableViewController.swift */,
 				334F46361F4B91CC00A6CD9B /* AppDelegate.swift */,
 				334F463A1F4B91CC00A6CD9B /* Main.storyboard */,
 				334F46401F4B91CC00A6CD9B /* Assets.xcassets */,
@@ -137,6 +143,8 @@
 			files = (
 				334F463F1F4B91CC00A6CD9B /* Collector.xcdatamodeld in Sources */,
 				334F46371F4B91CC00A6CD9B /* AppDelegate.swift in Sources */,
+				334F464E1F4CF8D000A6CD9B /* ItemsTableViewController.swift in Sources */,
+				334F464C1F4CEED300A6CD9B /* AddItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

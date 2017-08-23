@@ -14,13 +14,13 @@
         <!--Collector-->
         <scene sceneID="lAU-XH-Plo">
             <objects>
-                <tableViewController id="VjJ-xD-XeG" sceneMemberID="viewController">
+                <tableViewController id="VjJ-xD-XeG" customClass="ItemsTableViewController" customModule="Collector" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0b1-DV-zTB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zxu-3w-3NH">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="zxu-3w-3NH">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zxu-3w-3NH" id="Gdq-Ew-jRh">
@@ -47,15 +47,15 @@
             </objects>
             <point key="canvasLocation" x="2521" y="508"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Item View Controller-->
         <scene sceneID="UfZ-Al-eX4">
             <objects>
-                <viewController id="SyQ-tF-4ku" sceneMemberID="viewController">
+                <viewController id="SyQ-tF-4ku" customClass="AddItemViewController" customModule="Collector" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rs7-d3-4PE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GyO-mx-LSb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-camera" translatesAutoresizingMaskIntoConstraints="NO" id="GyO-mx-LSb">
                                 <rect key="frame" x="20" y="94" width="335" height="223"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="GyO-mx-LSb" secondAttribute="height" multiplier="3:2" id="oFI-gp-h1d"/>
@@ -70,6 +70,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Geu-WG-bWC">
                                 <rect key="frame" x="172" y="377" width="30" height="30"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="SyQ-tF-4ku" eventType="touchUpInside" id="p3L-FS-REh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -89,10 +92,22 @@
                     </view>
                     <navigationItem key="navigationItem" id="cWf-ap-sod">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="camera" id="Hgh-w0-7fJ"/>
-                            <barButtonItem systemItem="organize" id="rZm-XC-8NQ"/>
+                            <barButtonItem systemItem="camera" id="Hgh-w0-7fJ">
+                                <connections>
+                                    <action selector="cameraTapped:" destination="SyQ-tF-4ku" id="EPI-jU-zWk"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="organize" id="rZm-XC-8NQ">
+                                <connections>
+                                    <action selector="photosTapped:" destination="SyQ-tF-4ku" id="27Z-lE-Vpj"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="itemImageView" destination="GyO-mx-LSb" id="zIX-iw-Z9z"/>
+                        <outlet property="titleTextField" destination="0kd-c9-huG" id="FnA-QV-47W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5CO-wg-lul" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -115,4 +130,7 @@
             <point key="canvasLocation" x="1758" y="508"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="photo-camera" width="256" height="256"/>
+    </resources>
 </document>
