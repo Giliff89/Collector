@@ -49,7 +49,11 @@ class ItemsTableViewController: UITableViewController {
 
         return cell
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let photo = items[indexPath.row]
+        performSegue(withIdentifier: "photoPage", sender: photo)
+    }
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         
@@ -65,6 +69,20 @@ class ItemsTableViewController: UITableViewController {
                 try? context.save()
                 
                 getItems()
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let addVC = segue.destination as? AddItemViewController {
+            addVC.previousVC = self
+        }
+        
+        if let photoVC = segue.destination as? PhotoPageViewController {
+            
+            if let photo = sender as? Item {
+                photoVC.selectedPhoto = photo
+                photoVC.previousVC = self
             }
         }
     }

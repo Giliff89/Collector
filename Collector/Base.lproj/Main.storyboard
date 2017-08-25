@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
@@ -42,10 +43,58 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="zyB-dR-8ho" kind="show" identifier="photoPage" id="XOT-zr-6IL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XMU-FV-tLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2521" y="508"/>
+        </scene>
+        <!--Photo Page-->
+        <scene sceneID="OIF-3c-955">
+            <objects>
+                <viewController id="zyB-dR-8ho" customClass="PhotoPageViewController" customModule="Collector" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T2U-Ks-8Cs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tsw-RW-rVz">
+                                <rect key="frame" x="20" y="114" width="335" height="233"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMn-vm-PJS">
+                                <rect key="frame" x="20" y="407" width="335" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="gt8-jf-E39"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="drs-zq-dmd" firstAttribute="trailing" secondItem="Tsw-RW-rVz" secondAttribute="trailing" constant="20" id="Dcc-oh-SYr"/>
+                            <constraint firstItem="drs-zq-dmd" firstAttribute="bottom" secondItem="lMn-vm-PJS" secondAttribute="bottom" constant="239" id="EyT-pB-TTQ"/>
+                            <constraint firstItem="drs-zq-dmd" firstAttribute="trailing" secondItem="lMn-vm-PJS" secondAttribute="trailing" constant="20" id="J03-T5-FFw"/>
+                            <constraint firstItem="lMn-vm-PJS" firstAttribute="centerX" secondItem="T2U-Ks-8Cs" secondAttribute="centerX" id="ajs-Gx-GsS"/>
+                            <constraint firstItem="Tsw-RW-rVz" firstAttribute="centerX" secondItem="T2U-Ks-8Cs" secondAttribute="centerX" id="dOg-6Z-pdu"/>
+                            <constraint firstItem="lMn-vm-PJS" firstAttribute="leading" secondItem="drs-zq-dmd" secondAttribute="leading" constant="20" id="f2J-8I-qXZ"/>
+                            <constraint firstItem="lMn-vm-PJS" firstAttribute="top" secondItem="Tsw-RW-rVz" secondAttribute="bottom" constant="60" id="kDz-ni-ygH"/>
+                            <constraint firstItem="Tsw-RW-rVz" firstAttribute="leading" secondItem="drs-zq-dmd" secondAttribute="leading" constant="20" id="keO-SV-nib"/>
+                            <constraint firstItem="Tsw-RW-rVz" firstAttribute="top" secondItem="drs-zq-dmd" secondAttribute="top" constant="50" id="upa-Ws-Cch"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="drs-zq-dmd"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Photo Page" id="uIl-Ud-Ach"/>
+                    <connections>
+                        <outlet property="photoLabel" destination="Tsw-RW-rVz" id="D9U-B7-5GI"/>
+                        <outlet property="photoNameLabel" destination="lMn-vm-PJS" id="ttW-Rn-wLb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2bx-ic-8Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2521" y="1283"/>
         </scene>
         <!--Add Item View Controller-->
         <scene sceneID="UfZ-Al-eX4">

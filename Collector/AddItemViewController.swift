@@ -9,6 +9,8 @@
 import UIKit
 
 class AddItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    var previousVC = ItemsTableViewController()
 
     @IBOutlet weak var itemImageView: UIImageView!
     
